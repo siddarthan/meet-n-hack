@@ -49,9 +49,21 @@ Hacker::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-   config.action_mailer.raise_delivery_errors = false
     config.action_mailer.default_url_options = { :host => 'http://meet-n-hack.herokuapp.com/' }
-
+# ActionMailer Config
+# Setup for production - deliveries, no errors raised
+config.action_mailer.delivery_method = :smtp      
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default :charset => "utf-8"
+ActionMailer::Base.smtp_settings = {  
+  :address              => "smtp.gmail.com",  
+  :port                 => 587,  
+  :domain               => "gmail.com",  
+  :user_name            => "banditbanoit@gmail.com",  
+  :password             => "madscotland1",  
+  :authentication       => "plain"
+  # :enable_starttls_auto => tru
 
   # Enable threaded mode
   # config.threadsafe!

@@ -55,5 +55,20 @@ module Hacker
     config.assets.initialize_on_precompile=false
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.action_mailer.default_url_options = { :host => 'http://meet-n-hack.herokuapp.com/programmers' } 
+config.action_mailer.delivery_method = :smtp 
+config.action_mailer.perform_deliveries = true 
+config.action_mailer.raise_delivery_errors = true 
+config.action_mailer.default :charset => "utf-8" 
+
+ActionMailer::Base.smtp_settings = { 
+:address => "smtp.gmail.com", 
+:port => 587, 
+:authentication => :plain, 
+:domain => 'http://meet-n-hack.herokuapp.com/programmers', 
+:user_name => 'banditbanoit@gmail.com', 
+:password => 'madscotland1', 
+:enable_starttls_auto => true 
+} 
   end
 end

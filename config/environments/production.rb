@@ -63,6 +63,7 @@ ActionMailer::Base.smtp_settings = {
   :user_name            => "banditbanoit@gmail.com",  
   :password             => "madscotland1",  
   :authentication       => "plain"
+}
   # :enable_starttls_auto => tru
 
   # Enable threaded mode
